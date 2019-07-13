@@ -1,0 +1,7 @@
+.toggleable-header {
+  display: none;
+}
+
+.toggleable-header.visible {
+  display: block;
+}

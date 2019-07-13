@@ -18,6 +18,13 @@ module.exports = {
           loader: 'babel-loader',
           options: babelConfig
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   }
