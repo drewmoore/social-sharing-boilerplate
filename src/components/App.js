@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Headline from './components/Headline';
-import VisibilityFilter from './components/VisibilityFilter';
+import Headline from './Headline';
+import VisibilityFilter from './VisibilityFilter';
 
 const App = () => (
   <React.Fragment>
