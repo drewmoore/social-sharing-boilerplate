@@ -1,7 +1,7 @@
 import React from 'react';
 
-const template = ({ shareUrl }) => (
-  <button>
+const template = ({ share }) => (
+  <button onClick={() => share()}>
     Share
   </button>
 );
