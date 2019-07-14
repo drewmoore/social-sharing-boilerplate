@@ -9,8 +9,12 @@ app.use(express.static('public'));
 
 const router = express.Router();
 
+const clientConfig = Object.freeze({
+  APP_HOST: process.env.APP_HOST
+});
+
 router.get('/', (req, res) => (
-  res.send(render())
+  res.send(render(clientConfig))
 ));
 
 app.use(router);

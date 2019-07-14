@@ -1,6 +1,6 @@
 const locale = 'en_US';
 
-const render = () => (`
+const render = (config) => (`
   <!doctype html>
   <html>
     <head>
@@ -21,6 +21,7 @@ const render = () => (`
 
       <div id="root"></div>
       <script src="js/main.js"></script>
+      <script>renderApp('${JSON.stringify(config)}');</script>
     </body>
     </html>
 `);
