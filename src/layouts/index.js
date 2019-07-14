@@ -26,7 +26,6 @@ const render = (config, state, currentUrl) => (`
             appId            : ${process.env.FB_APP_ID},
             autoLogAppEvents : true,
             xfbml            : true,
-            status           : true,
             version          : 'v3.3'
           });
         };
