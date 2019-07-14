@@ -1,7 +1,7 @@
 const locale = 'en_US';
 
 const title = 'Social Sharing Boilerplate';
-const fbDescription = ({ visible }) => (
+const fbDescription = ({ visible } = {}) => (
   `A Boilerplate for Doing Stuff on React and Sharing the Results.
   In this case, text is ${(typeof visible !== 'undefined' && !visible) ? 'invisible' : 'visible'}.`
 );
