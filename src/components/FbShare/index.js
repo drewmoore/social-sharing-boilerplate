@@ -6,7 +6,7 @@ import template from './template';
 const hashtag = '#killinit';
 
 const share = (visible) => (
-  FB.ui({
+  window.FB.ui({
     method: 'share',
     href: `${config.APP_HOST}?visible=${visible}`,
     quote: `Hey look, I made this thing ${visible ? 'visible' : 'invisible'}`,
@@ -15,9 +15,20 @@ const share = (visible) => (
 );
 
 const mapStateToProps = ({ visibilityFilter }) => ({
-  share: () => {  share(visibilityFilter.visible); }
+  visible: visibilityFilter.visible
 });
 
-const FbShare = connect(mapStateToProps)(template);
+const mapDispatchToProps = (dispatch) => ({
+  share: (visible) => {
+    window.FB.getLoginStatus(function(response) {
+
+      console.log('hello getLoginStatus callback', response)
+
+      share(visible);
+    }, true);
+  }
+});
+
+const FbShare = connect(mapStateToProps, mapDispatchToProps)(template);
 
 export default FbShare;

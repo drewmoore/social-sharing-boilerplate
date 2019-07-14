@@ -13,6 +13,14 @@ export APP_HOST=...URL-for-your-app...
 export FB_APP_ID=...provided-by-fb-under-app-settings...
 ```
 
+# Development
+
+## Deploying Locally Using HTTPs
+Generate a cert and an nginx config:
+```
+./bin/local-deploy/localhost-config
+```
+
 # External Setup for Social Networks
 
 ## Facebook

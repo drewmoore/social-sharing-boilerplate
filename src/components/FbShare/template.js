@@ -1,7 +1,7 @@
 import React from 'react';
 
-const template = ({ share }) => (
-  <button onClick={() => share()}>
+const template = ({ share, visible }) => (
+  <button onClick={() => share(visible)}>
     Share
   </button>
 );

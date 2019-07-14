@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo '127.0.1.1 social-sharing-boilerplate.local' | sudo tee --append /etc/hosts;
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./bin/local-deploy/certs/social-sharing-boilerplate.key -out ./bin/local-deploy/certs/social-sharing-boilerplate.crt;
+
+sudo cp ./bin/local-deploy/social-sharing-boilerplate.conf /etc/nginx/conf.d/;
+sudo cp ./bin/local-deploy/certs/*.crt /etc/ssl/certs/;
+sudo cp ./bin/local-deploy/certs/*.key /etc/ssl/private/;
+
+sudo apt install nginx -y;
+sudo service nginx stop;
+sudo service nginx start;
