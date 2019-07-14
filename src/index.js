@@ -8,11 +8,11 @@ import App from './components/App'
 
 const rootElement = document.getElementById('root')
 
-window.renderApp = (config) => {
+window.renderApp = (config, state) => {
   initialize(JSON.parse(config));
 
   ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store(JSON.parse(state))}>
       <App />
     </Provider>,
     rootElement

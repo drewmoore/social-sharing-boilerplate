@@ -13,10 +13,14 @@ const clientConfig = Object.freeze({
   APP_HOST: process.env.APP_HOST
 });
 
+const initializeState = ({ visible }) => (
+  typeof visible !== 'undefined' ? { visibilityFilter: { visible: visible === 'true' } } : {}
+);
+
 router.get('/', (req, res) => (
-  res.send(render(clientConfig))
+  res.send(render(clientConfig, initializeState(req.query)))
 ));
 
 app.use(router);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Listening on port ${port}!`));

@@ -1,8 +1,12 @@
 import { TOGGLE_VISIBILITY } from "../actionTypes";
 
-const initialState = { visible: true };
+const defaultState = { visible: true };
 
-const visibilityFilter = (state = initialState, action) => {
+const initialize = (initialState) => (
+  Object.assign({}, defaultState, initialState)
+);
+
+const visibilityFilter = (initialState = {}) => (state = initialize(initialState), action) => {
   switch (action.type) {
     case TOGGLE_VISIBILITY: {
       return Object.assign({}, state, { visible: !state.visible });

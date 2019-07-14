@@ -1,4 +1,8 @@
 import { combineReducers } from "redux";
 import visibilityFilter from "./visibilityFilter";
 
-export default combineReducers({ visibilityFilter });
+const initializeReducers = (initialState) => (
+  combineReducers({ visibilityFilter: visibilityFilter(initialState.visibilityFilter) })
+);
+
+export default initializeReducers;
