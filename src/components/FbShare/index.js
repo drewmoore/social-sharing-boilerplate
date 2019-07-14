@@ -7,6 +7,8 @@ const share = (visible) => (
   FB.ui({
     method: 'share',
     href: `${config.APP_HOST}?visible=${visible}`,
+    quote: `Hey look, I made this thing ${visible ? 'visible' : 'invisible'}`,
+    hashtag: '#killin-it'
   }, (response) => {})
 );
 

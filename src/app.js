@@ -18,7 +18,13 @@ const initializeState = ({ visible }) => (
 );
 
 router.get('/', (req, res) => (
-  res.send(render(clientConfig, initializeState(req.query)))
+  res.send(
+    render(
+      clientConfig,
+      initializeState(req.query),
+      process.env.APP_HOST.replace(/\/$/, '') + req.originalUrl
+    )
+  )
 ));
 
 app.use(router);
