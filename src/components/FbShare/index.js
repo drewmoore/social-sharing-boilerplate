@@ -6,7 +6,7 @@ import template from './template';
 const share = (visible) => (
   FB.ui({
     method: 'share',
-    href: `${config.APP_HOST}?visibile=${visible}`,
+    href: `${config.APP_HOST}?visible=${visible}`,
   }, (response) => {})
 );
 
